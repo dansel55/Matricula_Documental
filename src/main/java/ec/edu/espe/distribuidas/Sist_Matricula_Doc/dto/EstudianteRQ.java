@@ -10,6 +10,7 @@
  */
 package ec.edu.espe.distribuidas.Sist_Matricula_Doc.dto;
 
+import ec.edu.espe.distribuidas.Sist_Matricula_Doc.model.CarreraEstudiante;
 import lombok.Builder;
 import lombok.Data;
 
@@ -30,6 +31,7 @@ public class EstudianteRQ {
     private String genero;
     private String telefono; 
     private String direccion;
-    private Integer carrera;
+    //private String carrera;
+    private CarreraEstudiante carrera;
     
 }

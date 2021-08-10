@@ -10,10 +10,10 @@
  */
 package ec.edu.espe.distribuidas.Sist_Matricula_Doc.model;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
 
 /**
  *
@@ -22,9 +22,10 @@ import org.springframework.data.annotation.Id;
 @Data
 public class Matricula {
     
+    private String codigo;
     private Periodo periodo;
     private EstudianteMatricula estudiante;
     private Date fecha;
-    private Integer creditosTotales;
+    private BigDecimal creditosTotales;
     private List<DetalleMatricula> detalles;
 }

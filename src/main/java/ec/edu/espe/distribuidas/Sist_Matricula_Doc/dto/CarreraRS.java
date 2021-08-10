@@ -21,7 +21,7 @@ import lombok.Data;
 @Builder
 public class CarreraRS {    
    
-    private Integer codigo;     
+    private String codigo;     
     private String nombre;
     
 }

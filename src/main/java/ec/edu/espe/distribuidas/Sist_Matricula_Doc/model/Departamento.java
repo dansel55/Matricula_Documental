@@ -28,6 +28,6 @@ public class Departamento {
     private String id; 
     @Indexed(name = "idx_departamento_nomdep")
     private String nombre;
-    private List<Carrera> carreras;
+    //private List<Carrera> carreras;
     
 }

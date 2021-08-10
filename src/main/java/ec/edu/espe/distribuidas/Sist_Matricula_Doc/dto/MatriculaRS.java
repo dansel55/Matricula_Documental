@@ -22,7 +22,7 @@ import lombok.Data;
 @Data
 public class MatriculaRS {
 
-    private Integer codigo;
+    private String codigo;
     private Date fecha;   
     private String periodo;   
     private BigDecimal creditosTotales;

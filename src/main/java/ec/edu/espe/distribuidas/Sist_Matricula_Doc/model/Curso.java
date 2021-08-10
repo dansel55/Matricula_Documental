@@ -20,6 +20,7 @@ import lombok.Data;
 @Data
 public class Curso {
     
+    private String codigo;
     private String asignatura;
     private String periodo;
     private Integer nrc;

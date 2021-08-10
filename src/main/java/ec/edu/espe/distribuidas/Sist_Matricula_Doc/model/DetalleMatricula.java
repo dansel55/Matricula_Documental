@@ -10,8 +10,8 @@
  */
 package ec.edu.espe.distribuidas.Sist_Matricula_Doc.model;
 
+import java.math.BigDecimal;
 import java.util.Date;
-import java.util.List;
 import lombok.Data;
 
 /**
@@ -21,7 +21,10 @@ import lombok.Data;
 @Data
 public class DetalleMatricula {
     
+    private String codigo;
+    private String materia;
     private Curso curso;
+    private BigDecimal creditos;
     private Date fecha;
     private String estado;
     

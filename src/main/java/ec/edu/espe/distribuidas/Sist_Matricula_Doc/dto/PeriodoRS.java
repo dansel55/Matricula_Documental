@@ -21,7 +21,7 @@ import lombok.Data;
 @Builder
 public class PeriodoRS {
  
-    private Integer codigo;  
+    private String codigo;  
     private String nombre; 
     private String estado;
     

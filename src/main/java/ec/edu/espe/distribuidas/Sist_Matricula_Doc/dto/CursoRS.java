@@ -22,7 +22,7 @@ import lombok.Data;
 @Builder
 public class CursoRS {
 
-    private Integer codigo;
+    private String codigo;
     private Integer nrc;
     private Integer cupo;
     private String asignatura;

@@ -10,6 +10,7 @@
  */
 package ec.edu.espe.distribuidas.Sist_Matricula_Doc.dto;
 
+import java.math.BigDecimal;
 import lombok.Builder;
 import lombok.Data;
 
@@ -21,10 +22,10 @@ import lombok.Data;
 @Builder
 public class MatriculaDetalleRS {
     
-    private Integer codigo;
+    private String codigo;
     private Integer nrc;
     private String materia;
-    private Integer creditos; 
+    private BigDecimal creditos; 
     private String estado;
     
 }

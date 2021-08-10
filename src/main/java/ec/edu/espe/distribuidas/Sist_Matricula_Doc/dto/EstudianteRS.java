@@ -30,6 +30,7 @@ public class EstudianteRS {
     private String correo;
     private String genero;
     private String direccion;
+    private String telefono;
     private String carrera;
     
 }

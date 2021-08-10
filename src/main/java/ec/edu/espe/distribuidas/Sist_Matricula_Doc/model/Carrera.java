@@ -20,6 +20,7 @@ import lombok.Data;
 @Data
 public class Carrera {
     
+    private String codigo;
     private String nombre;
     private String vigencia;
     private Integer niveles;

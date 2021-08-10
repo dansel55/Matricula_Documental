@@ -29,7 +29,7 @@ public class EstudianteTS {
                 .genero(estudiante.getGenero())                
                 .telefono(estudiante.getTelefono())
                 .direccion(estudiante.getDireccion())
-                .carrera(estudiante.getCarrera().getNombre())
+                .carrera(estudiante.getCarrera())
                 .build();
         return estudianteRS;
     }

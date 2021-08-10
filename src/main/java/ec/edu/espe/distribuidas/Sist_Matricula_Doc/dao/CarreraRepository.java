@@ -12,6 +12,7 @@ package ec.edu.espe.distribuidas.Sist_Matricula_Doc.dao;
 
 import ec.edu.espe.distribuidas.Sist_Matricula_Doc.model.Carrera;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**
@@ -25,4 +26,6 @@ public interface CarreraRepository extends MongoRepository<Carrera, Integer>{
     List<Carrera> findByVigencia(String vigencia);
     
     List<Carrera> findByModalidad(String modalidad);
+    
+    Optional<Carrera> findByCodigo(String id);
 }

@@ -14,14 +14,18 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 import lombok.Data;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  *
  * @author Usuario
  */
 @Data
+@Document(collection = "matriculas")
 public class Matricula {
     
+    @Id
     private String codigo;
     private Periodo periodo;
     private EstudianteMatricula estudiante;

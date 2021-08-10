@@ -21,16 +21,8 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  */
 public interface EstudianteRepository extends MongoRepository<Estudiante, String> {
 
-    //Estudiante findByTipoIdentificacionAndIdentificacion(String tipoIdentificacion, String identificacion);
-
-    //List<Estudiante> findByApellidoLike(String apellido);
-
-    List<Estudiante> findByCorreoOrIdentificacion(String correo, String identificacion);
-
     Optional<Estudiante> findByCorreo(String correo);
 
-    //List<Estudiante> findByTelefonoOrderByApellido(String telefono);
-
-    //List<Estudiante> findByGeneroOrderByApellido(String genero);
+    List<Estudiante> findByCorreoOrIdentificacion(String correo, String identificacion);
 
 }

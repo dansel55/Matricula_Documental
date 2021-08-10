@@ -36,12 +36,12 @@ public class EstudianteService {
                 .findByCorreoOrIdentificacion(estudianteRQ.getCorreo() + "@espe.edu.ec",
                         estudianteRQ.getIdentificacion());
         if (!estudiantes.isEmpty()) {
-            //throw new EntityExistsException("Ya existe un usuario con esta cedula o nombre de usuario");
+            throw new EntityNotFoundException("Ya existe un usuario con esta cedula o nombre de usuario");
         }
-        /*Optional<Carrera> carrera = this.carreraRepository.findById(estudianteRQ.getCarrera());
+        Optional<Carrera> carrera = this.carreraRepository.findByCodigo(estudianteRQ.getCarrera());
         if (carrera.isEmpty()) {
             throw new EntityNotFoundException("No existe la carrera con id: " + estudianteRQ.getCarrera());
-        }*/
+        }
         Estudiante estudiante = new Estudiante();
         estudiante.setTipoIdentificacion(estudianteRQ.getTipo());
         estudiante.setIdentificacion(estudianteRQ.getIdentificacion());
@@ -53,7 +53,7 @@ public class EstudianteService {
         estudiante.setTelefono(estudianteRQ.getTelefono());
         estudiante.setDireccion(estudianteRQ.getDireccion().toUpperCase());
         //estudiante.setCarrera(carrera.get());
-        estudiante.setCarrera(estudianteRQ.getCarrera());
+        estudiante.setCarrera(carrera.get().getNombre());
         this.estudianteRepository.save(estudiante);
     }
 
@@ -73,10 +73,10 @@ public class EstudianteService {
 
     public Estudiante obtenerEstudanterPorCorreo(String correo) {
         Optional<Estudiante> estudianteOpt = this.estudianteRepository.findByCorreo(correo);
-        log.info("Nombre: {}", estudianteOpt.get().getApellido());
         if (estudianteOpt.isEmpty()) {
             throw new EntityNotFoundException("No se encontro el estudiante con el correo: " + correo);
         }
+        log.info("Nombre: {}", estudianteOpt.get().getApellido());
 
         return estudianteOpt.get();
     }

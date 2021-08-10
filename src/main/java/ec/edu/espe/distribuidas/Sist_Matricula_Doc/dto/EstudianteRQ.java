@@ -31,7 +31,7 @@ public class EstudianteRQ {
     private String genero;
     private String telefono; 
     private String direccion;
-    //private String carrera;
-    private CarreraEstudiante carrera;
+    private String carrera;
+    //private CarreraEstudiante carrera;
     
 }

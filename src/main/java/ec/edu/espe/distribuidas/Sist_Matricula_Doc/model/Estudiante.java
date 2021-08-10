@@ -23,10 +23,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
  */
 @Data
 @Document(collection="estudiantes")
-@CompoundIndexes({
+/*@CompoundIndexes({
     @CompoundIndex(name = "idxu_compest_tiidid", def = "['tipoIdentificacion': 1, 'identificacion': 1]", unique = true),
     @CompoundIndex(name = "idxu_compest_apenom", def = "['apellido': 1, 'nombre': 1]")
-})
+})*/
 
 public class Estudiante {
     
@@ -34,12 +34,12 @@ public class Estudiante {
     private String id;    
     private String tipoIdentificacion;    
     private String identificacion;
-    private CarreraEstudiante carrera;
+    private String carrera;
     private String nombre;
-    @Indexed(name = "idx_estudiante_mail")
+    //@Indexed(name = "idx_estudiante_mail")
     private String correo;
     private String contrasena;
-    @Indexed(name = "idx_estudiante_ape")
+    //@Indexed(name = "idx_estudiante_ape")
     private String apellido;
     private String genero;
     private String telefono;

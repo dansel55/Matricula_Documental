@@ -10,6 +10,7 @@
  */
 package ec.edu.espe.distribuidas.Sist_Matricula_Doc.dto;
 
+import java.math.BigDecimal;
 import java.util.List;
 import lombok.Builder;
 import lombok.Data;
@@ -27,7 +28,7 @@ public class CursoRS {
     private Integer cupo;
     private String asignatura;
     private Integer disponible;
-    private Integer creditos;
+    private BigDecimal creditos;
     private List<String> carreras;
     private List<HorarioRS> horarios;
 

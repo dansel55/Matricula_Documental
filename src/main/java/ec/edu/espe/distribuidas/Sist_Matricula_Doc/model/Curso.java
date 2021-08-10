@@ -10,6 +10,7 @@
  */
 package ec.edu.espe.distribuidas.Sist_Matricula_Doc.model;
 
+import java.math.BigDecimal;
 import java.util.List;
 import lombok.Data;
 
@@ -23,6 +24,7 @@ public class Curso {
     private String codigo;
     private String asignatura;
     private String periodo;
+    private BigDecimal creditos;
     private Integer nrc;
     private Integer cupo;
     private Integer disponible;

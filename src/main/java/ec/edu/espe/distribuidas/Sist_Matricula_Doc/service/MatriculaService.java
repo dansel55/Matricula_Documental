@@ -99,8 +99,8 @@ public class MatriculaService {
 
         List<String> errorCursos = new ArrayList<>();
 
-        for (Integer crs : matriculaRQ.getCursos()) {
-            Optional<Curso> cursoOpt = this.cursoRepository.findById(crs);
+        for (String crs : matriculaRQ.getCursos()) {
+            Optional<Curso> cursoOpt = this.cursoRepository.findByCodigo(crs);
 
             if (cursoOpt.isEmpty()) {
                 errorCursos.add("El curso con el ID: " + crs + " no existe");

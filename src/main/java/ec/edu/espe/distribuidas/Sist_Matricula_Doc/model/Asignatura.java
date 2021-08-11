@@ -13,12 +13,14 @@ package ec.edu.espe.distribuidas.Sist_Matricula_Doc.model;
 import java.util.List;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  *
  * @author Usuario
  */
 @Data
+@Document(collection="asignatura")
 public class Asignatura {
 
     @Id

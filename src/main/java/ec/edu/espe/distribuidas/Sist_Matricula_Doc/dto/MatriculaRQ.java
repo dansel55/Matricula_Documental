@@ -23,8 +23,8 @@ import lombok.Data;
 public class MatriculaRQ {
 
     private String correo;
-    private Integer periodo;
-    private List<Integer> cursos;
+    private String periodo;
+    private List<String> cursos;
     private String matricula;
 
 }

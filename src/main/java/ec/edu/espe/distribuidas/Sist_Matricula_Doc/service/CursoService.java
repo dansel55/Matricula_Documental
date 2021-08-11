@@ -44,8 +44,8 @@ public class CursoService {
         this.periodoRepository = periodoRepository;
     }
 
-    public List<CursoRS> obtenerCursos(Integer codigoAsignatura, Integer codigoPeriodo) {
-        Optional<Asignatura> asignatura = this.asignaturaRepository.findById(codigoAsignatura);
+    public List<CursoRS> obtenerCursos(String codigoAsignatura, String codigoPeriodo) {
+        Optional<Asignatura> asignatura = this.asignaturaRepository.findByCodigo(codigoAsignatura);
 
         if (asignatura.isEmpty()) {
             throw new EntityNotFoundException("No se encontro la asignatura");

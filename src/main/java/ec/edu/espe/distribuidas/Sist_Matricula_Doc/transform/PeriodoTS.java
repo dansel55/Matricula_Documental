@@ -23,7 +23,7 @@ public class PeriodoTS {
         PeriodoRS rs = PeriodoRS.builder()
                 .codigo(periodo.getId())
                 .nombre(periodo.getNombre())
-                //.estado(periodo.getEstado())
+                .estado(periodo.getEstado())
                 .build();
         return rs;
     }

@@ -118,7 +118,7 @@ public class MatriculaService {
                 }
             }
 
-            if (!curso.getPeriodo().equals(periodo.get())) {
+            if (!curso.getPeriodo().equals(periodo.get().getNombre())) {
                 errorCursos.add("El curso con el NRC: " + curso.getNrc() + " no pertenece al mismo periodo");
                 continue;
             }
@@ -240,7 +240,7 @@ public class MatriculaService {
 
     }
 
-    public Matricula buscarMatricula(String correo, Integer periodo) {
+    public Matricula buscarMatricula(String correo, String periodo) {
 
         Optional<Estudiante> estudianteOpt = this.estudianteRepository.findByCorreo(correo);
         if (estudianteOpt.isEmpty()) {

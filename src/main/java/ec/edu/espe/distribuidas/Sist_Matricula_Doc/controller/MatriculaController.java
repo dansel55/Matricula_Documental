@@ -77,7 +77,7 @@ public class MatriculaController {
         @ApiResponse(code = 404, message = "Not Found - No se encontro una entidad"),
         @ApiResponse(code = 500, message = "Internal Server Error - Problema interno del servidor")})*/
     @GetMapping
-    public ResponseEntity buscarMatricula(@RequestParam String correo, @RequestParam Integer periodo) {
+    public ResponseEntity buscarMatricula(@RequestParam String correo, @RequestParam String periodo) {
         try {
             Matricula matricula = this.matriculaService.buscarMatricula(correo, periodo);
             MatriculaRS matriculaRS = MatriculaTS.matriculaRS(matricula);

@@ -44,7 +44,7 @@ public class CursoController {
         @ApiResponse(code = 200, message = "Ok - Se encontraron los registros"),
         @ApiResponse(code = 404, message = "Not Found - No se encontro una entidad"),
         @ApiResponse(code = 500, message = "Internal Server Error - Problemas al realizar la busqueda")})*/
-    public ResponseEntity obneterCursos(@PathVariable Integer codigoAsignatura, @PathVariable Integer codigoPeriodo) {
+    public ResponseEntity obneterCursos(@PathVariable String codigoAsignatura, @PathVariable String codigoPeriodo) {
         try {
             List<CursoRS> cursos = this.cursoService.obtenerCursos(codigoAsignatura, codigoPeriodo);
             return ResponseEntity.ok(cursos);

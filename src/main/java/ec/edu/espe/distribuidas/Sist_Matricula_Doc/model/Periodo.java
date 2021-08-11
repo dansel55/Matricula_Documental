@@ -30,6 +30,7 @@ public class Periodo {
     private String nombre;
     private Date inicio;
     private Date fin;
+    private String estado;
     //private List<Asignatura> asignaturas;
 
 }

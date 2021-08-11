@@ -52,10 +52,14 @@ public class AsignaturaService {
         if (departamento.isEmpty()) {
             throw new EntityNotFoundException("No se encontro el departamento");
         }
+        log.info("departamento:{}",departamento.get().getNombre());
         List<Asignatura> asignaturas = new ArrayList<>();
         List<Asignatura> asignaturaPeriodo = this.asignaturaRepository.findByDepartamento(departamento.get().getNombre());
+        log.info("paso:{}",asignaturaPeriodo.get(0).getNombre());
         for (Asignatura asig : asignaturaPeriodo) {
+            log.info("paso 2");
             for (String per : asig.getPeriodos()) {
+                log.info("Periodo asignatua:{}",per);
                 if (per.equals(periodo.get().getNombre())) {
                     asignaturas.add(asig);
                 }

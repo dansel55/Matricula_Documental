@@ -10,11 +10,14 @@
  */
 package ec.edu.espe.distribuidas.Sist_Matricula_Doc.controller;
 
+import ec.edu.espe.distribuidas.Sist_Matricula_Doc.dto.AsignaturaRS;
+import ec.edu.espe.distribuidas.Sist_Matricula_Doc.exception.EntityNotFoundException;
 import ec.edu.espe.distribuidas.Sist_Matricula_Doc.model.Asignatura;
 import ec.edu.espe.distribuidas.Sist_Matricula_Doc.service.AsignaturaService;
-import ec.edu.espe.distribuidas.Sist_Matricula_Doc.exception.EntityNotFoundException;
-import ec.edu.espe.distribuidas.Sist_Matricula_Doc.dto.AsignaturaRS;
 import ec.edu.espe.distribuidas.Sist_Matricula_Doc.transform.AsignaturaTS;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.http.HttpStatus;
@@ -41,13 +44,13 @@ public class AsignaturaController {
     }
 
     @GetMapping(value = "{codigoDepartamento}/{codigoPeriodo}")
-    /*@ApiOperation(value = "Busca las asignaturas impartidas por un departamento",
+    @ApiOperation(value = "Busca las asignaturas impartidas por un departamento",
             notes = "Devuelve todas las asignaturas que son impartidas por un departamento"
-                    + "en un periodo determinado")
+            + "en un periodo determinado")
     @ApiResponses(value = {
         @ApiResponse(code = 200, message = "Ok - Se encontraron los registros"),
         @ApiResponse(code = 404, message = "Not Found - No se encontro una entidad"),
-        @ApiResponse(code = 500, message = "Internal Server Error - Problemas al realizar la busqueda")})*/
+        @ApiResponse(code = 500, message = "Internal Server Error - Problemas al realizar la busqueda")})
     public ResponseEntity obtenerAsignaturas(@PathVariable String codigoDepartamento,
             @PathVariable String codigoPeriodo) {
         try {

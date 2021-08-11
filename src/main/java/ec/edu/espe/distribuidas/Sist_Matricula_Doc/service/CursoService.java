@@ -55,7 +55,8 @@ public class CursoService {
             throw new EntityNotFoundException("No se encontro el periodo");
         }
         List<CursoRS> cursosRS = new ArrayList<>();
-        List<Curso> curso = this.cursoRepository.findByAsignaturaAndPeriodoOrderByNrc(asignatura.get().getNombre(), periodo.get().getNombre());
+        List<Curso> curso = this.cursoRepository.findByAsignaturaAndPeriodoOrderByNrc(asignatura.get().getNombre(),
+                periodo.get().getNombre());
         for (Curso c : curso) {
             cursosRS.add(CursoTS.cursoRS(c));
         }

@@ -10,13 +10,13 @@
  */
 package ec.edu.espe.distribuidas.Sist_Matricula_Doc.service;
 
+import ec.edu.espe.distribuidas.Sist_Matricula_Doc.dao.AsignaturaRepository;
 import ec.edu.espe.distribuidas.Sist_Matricula_Doc.dao.DepartamentoRepository;
 import ec.edu.espe.distribuidas.Sist_Matricula_Doc.dao.PeriodoRepository;
-import ec.edu.espe.distribuidas.Sist_Matricula_Doc.dao.AsignaturaRepository;
+import ec.edu.espe.distribuidas.Sist_Matricula_Doc.exception.EntityNotFoundException;
 import ec.edu.espe.distribuidas.Sist_Matricula_Doc.model.Asignatura;
 import ec.edu.espe.distribuidas.Sist_Matricula_Doc.model.Departamento;
 import ec.edu.espe.distribuidas.Sist_Matricula_Doc.model.Periodo;
-import ec.edu.espe.distribuidas.Sist_Matricula_Doc.exception.EntityNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -35,7 +35,8 @@ public class AsignaturaService {
     private final DepartamentoRepository departamentoRepository;
     private final AsignaturaRepository asignaturaRepository;
 
-    public AsignaturaService(PeriodoRepository periodoRepository, DepartamentoRepository departamentoRepository, AsignaturaRepository asignaturaRepository) {
+    public AsignaturaService(PeriodoRepository periodoRepository, DepartamentoRepository departamentoRepository,
+            AsignaturaRepository asignaturaRepository) {
         this.periodoRepository = periodoRepository;
         this.departamentoRepository = departamentoRepository;
         this.asignaturaRepository = asignaturaRepository;
@@ -52,14 +53,15 @@ public class AsignaturaService {
         if (departamento.isEmpty()) {
             throw new EntityNotFoundException("No se encontro el departamento");
         }
-        log.info("departamento:{}",departamento.get().getNombre());
+        log.info("departamento:{}", departamento.get().getNombre());
         List<Asignatura> asignaturas = new ArrayList<>();
-        List<Asignatura> asignaturaPeriodo = this.asignaturaRepository.findByDepartamento(departamento.get().getNombre());
-        log.info("paso:{}",asignaturaPeriodo.get(0).getNombre());
+        List<Asignatura> asignaturaPeriodo
+                = this.asignaturaRepository.findByDepartamento(departamento.get().getNombre());
+        log.info("paso:{}", asignaturaPeriodo.get(0).getNombre());
         for (Asignatura asig : asignaturaPeriodo) {
             log.info("paso 2");
             for (String per : asig.getPeriodos()) {
-                log.info("Periodo asignatua:{}",per);
+                log.info("Periodo asignatua:{}", per);
                 if (per.equals(periodo.get().getNombre())) {
                     asignaturas.add(asig);
                 }

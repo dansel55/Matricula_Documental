@@ -20,7 +20,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * @author Usuario
  */
 @Data
-@Document(collection="asignaturas")
+@Document(collection = "asignaturas")
 public class Asignatura {
 
     @Id

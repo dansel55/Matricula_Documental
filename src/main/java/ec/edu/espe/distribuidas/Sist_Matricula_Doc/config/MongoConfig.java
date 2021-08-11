@@ -30,8 +30,8 @@ import org.springframework.data.mongodb.core.mapping.MongoMappingContext;
  * @author Usuario
  */
 @Configuration
-public class MongoConfig extends AbstractMongoClientConfiguration{
-    
+public class MongoConfig extends AbstractMongoClientConfiguration {
+
     @Override
     protected String getDatabaseName() {
         return "matricula";
@@ -49,16 +49,12 @@ public class MongoConfig extends AbstractMongoClientConfiguration{
 
     @Bean
     @Override
-    public MappingMongoConverter mappingMongoConverter(MongoDatabaseFactory databaseFactory, MongoCustomConversions customConversions, MongoMappingContext mappingContext) {
-        MappingMongoConverter converter = super.mappingMongoConverter(databaseFactory, customConversions, mappingContext);
+    public MappingMongoConverter mappingMongoConverter(MongoDatabaseFactory databaseFactory,
+            MongoCustomConversions customConversions, MongoMappingContext mappingContext) {
+        MappingMongoConverter converter
+                = super.mappingMongoConverter(databaseFactory, customConversions, mappingContext);
         converter.setTypeMapper(new DefaultMongoTypeMapper(null));
         return converter;
     }
 
-    /**
-     * Inject a CustomConversions bean to overwrite the default mapping of BigDecimal.
-     *
-     * @return a new instance of CustomConversons
-     */
-   
 }

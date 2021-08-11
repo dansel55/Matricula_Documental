@@ -43,7 +43,6 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class MatriculaService {
 
-
     private final MatriculaRepository matriculaRepository;
     private final EstudianteRepository estudianteRepository;
     private final CursoRepository cursoRepository;
@@ -144,7 +143,7 @@ public class MatriculaService {
 
             for (Matricula matric : materiasEstudiante) {
                 for (DetalleMatricula detMatricula : matric.getDetalles()) {
-                    if (detMatricula.getNrc()==curso.getNrc()) {
+                    if (detMatricula.getNrc() == curso.getNrc()) {
                         materiaPasada = true;
                         break;
                     }
@@ -216,7 +215,7 @@ public class MatriculaService {
                     detalleMatriculaNueva.setCreditos(curso.getCreditos());
                     detalleMatriculaNueva.setEstado("CUR");
                     detalleMatriculaNueva.setFecha(new Date());
-                    creditos=creditos.add(curso.getCreditos());
+                    creditos = creditos.add(curso.getCreditos());
                     curso.setDisponible((Integer) (curso.getDisponible() - 1));
 
                     detalleMatriculas.add(detalleMatriculaNueva);
@@ -254,7 +253,8 @@ public class MatriculaService {
             throw new EntityNotFoundException("No se encontro el periodo con el ID" + periodo);
         }
 
-        Optional<Matricula> matriculaOpt = this.matriculaRepository.findByCorreoEstudianteAndPeriodo(estudiante.getCorreo(), per.get().getNombre());
+        Optional<Matricula> matriculaOpt = this.matriculaRepository
+                .findByCorreoEstudianteAndPeriodo(estudiante.getCorreo(), per.get().getNombre());
         if (matriculaOpt.isEmpty()) {
             throw new EntityNotFoundException("No se encontro la una matricula en el periodo: " + per.get().getNombre()
                     + " del estudiante " + estudiante.getApellido() + " " + estudiante.getNombre());
@@ -269,24 +269,24 @@ public class MatriculaService {
             throw new EntityNotFoundException("No se encontro la matricula");
         }
         BigDecimal creditos;
-        int index =0;
-        int i=0;
-        
+        int index = 0;
+        int i = 0;
+
         List<DetalleMatricula> detalleMatriculas = matriculaOpt.get().getDetalles();
-        for(DetalleMatricula detalles : detalleMatriculas){
-            if(Objects.equals(detalles.getNrc(), nrc)){
-                i=index;
+        for (DetalleMatricula detalles : detalleMatriculas) {
+            if (Objects.equals(detalles.getNrc(), nrc)) {
+                i = index;
                 matriculaOpt.get().setCreditosTotales(matriculaOpt.get()
-                .getCreditosTotales().subtract(detalles.getCreditos()));
+                        .getCreditosTotales().subtract(detalles.getCreditos()));
             }
             index++;
         }
         detalleMatriculas.remove(i);
         matriculaOpt.get().setDetalles(detalleMatriculas);
         Optional<Curso> curso = this.cursoRepository.findByNrc(nrc);
-        
-        curso.get().setDisponible(curso.get().getDisponible()-1);
-        
+
+        curso.get().setDisponible(curso.get().getDisponible() - 1);
+
         this.matriculaRepository.save(matriculaOpt.get());
     }
 
@@ -295,14 +295,13 @@ public class MatriculaService {
         if (estudianteOpt.isEmpty()) {
             throw new EntityNotFoundException("No se encontro el estudiante con el correo: " + correo);
         }
-        
+
         List<Matricula> matriculas = this.matriculaRepository.findByCorreoEstudiante(correo);
         if (matriculas.isEmpty()) {
             throw new EntityNotFoundException("No se encontraron matriculas del  estudiante con el correo: " + correo);
         }
-        
-        Estudiante estudiante = estudianteOpt.get();
 
+        Estudiante estudiante = estudianteOpt.get();
 
         return matriculas;
     }

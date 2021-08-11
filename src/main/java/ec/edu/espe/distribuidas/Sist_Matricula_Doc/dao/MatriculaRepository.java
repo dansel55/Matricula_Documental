@@ -26,8 +26,11 @@ public interface MatriculaRepository extends MongoRepository<Matricula, Integer>
     
     //List<Matricula> findByFechaOrderByFechaDesc(Date fecha);
 
-    //Optional<Matricula> findByEstudianteAndPeriodo(Estudiante estudiante, Periodo periodo);
+    Optional<Matricula> findByCorreoEstudianteAndPeriodo(String correo, String periodo);
     
-    List<Matricula> findByEstudiante(EstudianteMatricula estudiante);
+    Optional<Matricula> findByCodigo(String codigo);
+    
+    List<Matricula> findByCorreoEstudiante(String correo);
+    
     
 }

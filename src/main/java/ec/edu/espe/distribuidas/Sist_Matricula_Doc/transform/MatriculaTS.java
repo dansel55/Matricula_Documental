@@ -33,7 +33,7 @@ public class MatriculaTS {
         for (DetalleMatricula detalleMatricula : matricula.getDetalles()) {
             MatriculaDetalleRS matriculaDetalleRS = MatriculaDetalleRS.builder()
                     .codigo(detalleMatricula.getCodigo())
-                    .nrc(detalleMatricula.getCurso().getNrc())
+                    .nrc(detalleMatricula.getNrc())
                     .materia(detalleMatricula.getMateria())
                     .creditos(detalleMatricula.getCreditos())
                     //.materia(detalleMatricula.getCurso().getAsignatura().getNombre())

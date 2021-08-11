@@ -13,6 +13,7 @@ package ec.edu.espe.distribuidas.Sist_Matricula_Doc.dao;
 import ec.edu.espe.distribuidas.Sist_Matricula_Doc.model.Asignatura;
 import ec.edu.espe.distribuidas.Sist_Matricula_Doc.model.Prerequisitos;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**
@@ -30,6 +31,8 @@ public interface AsignaturaRepository extends MongoRepository<Asignatura, Intege
     List<Asignatura> findByPeriodoId(Integer codigoPeriodo);
     
     List<Prerequisitos> findByPrerequisitosEstado(String estado);*/
+    
+    Optional<Asignatura> findByNombre(String nombre);
     
     List<Asignatura> findByDepartamento(String departamento);
     

@@ -112,7 +112,7 @@ public class MatriculaController {
         }
     }
 
-    @DeleteMapping(value = "{id}")
+    @DeleteMapping(value = "{matricula}/{nrc}")
     /*@ApiOperation(value = "Elimina una materia de la matricula",
             notes = "Elimina una materia especifica de una matricula")
     @ApiResponses(value = {

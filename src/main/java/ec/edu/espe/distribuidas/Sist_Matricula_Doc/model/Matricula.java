@@ -27,7 +27,7 @@ public class Matricula {
 
     @Id
     private String codigo;
-    private Periodo periodo;
+    private String periodo;
     private String correoEstudiante;
     private Date fecha;
     private BigDecimal creditosTotales;

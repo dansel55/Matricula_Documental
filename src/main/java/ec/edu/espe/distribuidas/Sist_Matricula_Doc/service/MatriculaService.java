@@ -92,7 +92,7 @@ public class MatriculaService {
         if (periodo.isEmpty()) {
             throw new EntityNotFoundException("No se encontro el periodo con el ID" + matriculaRQ.getPeriodo());
         }
-        BigDecimal creditos = BigDecimal.ZERO;
+        BigDecimal creditos = new BigDecimal(0);
         if (matricula.getCodigo() != null) {
             creditos = matricula.getCreditosTotales();
         }
@@ -213,9 +213,10 @@ public class MatriculaService {
                     DetalleMatricula detalleMatriculaNueva = new DetalleMatricula();
                     detalleMatriculaNueva.setMateria(curso.getAsignatura());
                     detalleMatriculaNueva.setNrc(curso.getNrc());
+                    detalleMatriculaNueva.setCreditos(curso.getCreditos());
                     detalleMatriculaNueva.setEstado("CUR");
                     detalleMatriculaNueva.setFecha(new Date());
-                    creditos.add(curso.getCreditos());
+                    creditos=creditos.add(curso.getCreditos());
                     curso.setDisponible((Integer) (curso.getDisponible() - 1));
 
                     detalleMatriculas.add(detalleMatriculaNueva);
@@ -228,7 +229,7 @@ public class MatriculaService {
 
         matricula.setCreditosTotales(creditos);
         matricula.setDetalles(detalleMatriculas);
-        matricula.setPeriodo(periodo.get());
+        matricula.setPeriodo(periodo.get().getNombre());
         matricula.setFecha(new Date());
         if (detalleMatriculas.size() > 0) {
             this.matriculaRepository.save(matricula);

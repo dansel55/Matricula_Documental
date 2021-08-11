@@ -13,6 +13,7 @@ package ec.edu.espe.distribuidas.Sist_Matricula_Doc.dao;
 import ec.edu.espe.distribuidas.Sist_Matricula_Doc.model.EstudianteMatricula;
 import ec.edu.espe.distribuidas.Sist_Matricula_Doc.model.Matricula;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**
@@ -21,8 +22,12 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  */
 public interface MatriculaRepository extends MongoRepository<Matricula, Integer> {
 
-    //List<Matricula> findByFechaOrderByFechaDesc(Date fecha);
-    //Optional<Matricula> findByEstudianteAndPeriodo(Estudiante estudiante, Periodo periodo);
-    List<Matricula> findByEstudiante(EstudianteMatricula estudiante);
+
+    Optional<Matricula> findByCorreoEstudianteAndPeriodo(String correo, String periodo);
+    
+    Optional<Matricula> findByCodigo(String codigo);
+    
+    List<Matricula> findByCorreoEstudiante(String correo);
+    
 
 }

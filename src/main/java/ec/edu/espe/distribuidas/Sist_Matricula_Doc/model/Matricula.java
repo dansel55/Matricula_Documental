@@ -28,7 +28,7 @@ public class Matricula {
     @Id
     private String codigo;
     private Periodo periodo;
-    private EstudianteMatricula estudiante;
+    private String correoEstudiante;
     private Date fecha;
     private BigDecimal creditosTotales;
     private List<DetalleMatricula> detalles;

@@ -25,7 +25,7 @@ public class Asignatura {
     private String codigo;
     private String nombre;
     private Integer creditos;
-    private List<Prerequisitos> prerequisitos;
+    private List<String> prerequisitos;
     private List<String> periodos;
     private String departamento;
 

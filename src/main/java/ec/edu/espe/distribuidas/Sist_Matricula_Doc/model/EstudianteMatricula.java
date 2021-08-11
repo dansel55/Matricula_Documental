@@ -17,11 +17,10 @@ import lombok.Data;
  * @author Usuario
  */
 @Data
-public class EstudianteMatricula {     
-       
+public class EstudianteMatricula {
+
     private String identificacion;
-    private String nombre;  
+    private String nombre;
     private String apellido;
 
-    
 }

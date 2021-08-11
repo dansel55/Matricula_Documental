@@ -11,7 +11,6 @@
 package ec.edu.espe.distribuidas.Sist_Matricula_Doc.model;
 
 import java.util.Date;
-import java.util.List;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
@@ -24,7 +23,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Data
 @Document(collection = "periodos")
 public class Periodo {
-    
+
     @Id
     private String id;
     @Indexed(name = "idx_periodo_nomper")
@@ -32,5 +31,5 @@ public class Periodo {
     private Date inicio;
     private Date fin;
     //private List<Asignatura> asignaturas;
-    
+
 }

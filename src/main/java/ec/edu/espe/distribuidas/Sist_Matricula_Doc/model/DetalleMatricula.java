@@ -20,12 +20,12 @@ import lombok.Data;
  */
 @Data
 public class DetalleMatricula {
-    
+
     private String codigo;
     private String materia;
     private Curso curso;
     private BigDecimal creditos;
     private Date fecha;
     private String estado;
-    
+
 }

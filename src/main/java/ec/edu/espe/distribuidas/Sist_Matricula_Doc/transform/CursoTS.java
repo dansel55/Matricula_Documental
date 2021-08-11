@@ -10,7 +10,6 @@
  */
 package ec.edu.espe.distribuidas.Sist_Matricula_Doc.transform;
 
-
 import ec.edu.espe.distribuidas.Sist_Matricula_Doc.dto.CursoRS;
 import ec.edu.espe.distribuidas.Sist_Matricula_Doc.dto.HorarioRS;
 import ec.edu.espe.distribuidas.Sist_Matricula_Doc.model.Curso;
@@ -49,7 +48,6 @@ public class CursoTS {
         }
         return carreras;
     }*/
-
     public static List<HorarioRS> horarios(List<Horario> h) {
         List<HorarioRS> horarioRS = new ArrayList<>();
         if (h.isEmpty()) {

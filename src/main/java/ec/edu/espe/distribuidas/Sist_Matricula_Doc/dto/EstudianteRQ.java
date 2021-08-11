@@ -10,7 +10,6 @@
  */
 package ec.edu.espe.distribuidas.Sist_Matricula_Doc.dto;
 
-import ec.edu.espe.distribuidas.Sist_Matricula_Doc.model.CarreraEstudiante;
 import lombok.Builder;
 import lombok.Data;
 
@@ -22,16 +21,16 @@ import lombok.Data;
 @Builder
 public class EstudianteRQ {
 
-    private String tipo;  
+    private String tipo;
     private String identificacion;
     private String nombre;
-    private String apellido;  
-    private String correo; 
-    private String contrasena;  
+    private String apellido;
+    private String correo;
+    private String contrasena;
     private String genero;
-    private String telefono; 
+    private String telefono;
     private String direccion;
     private String carrera;
     //private CarreraEstudiante carrera;
-    
+
 }

@@ -9,9 +9,9 @@
  *    bran- - initial API and implementation and/or initial documentation
  */
 package ec.edu.espe.distribuidas.Sist_Matricula_Doc.transform;
+
 import ec.edu.espe.distribuidas.Sist_Matricula_Doc.dto.PeriodoRS;
 import ec.edu.espe.distribuidas.Sist_Matricula_Doc.model.Periodo;
-
 
 /**
  *
@@ -21,7 +21,7 @@ public class PeriodoTS {
 
     public static PeriodoRS periodoRS(Periodo periodo) {
         PeriodoRS rs = PeriodoRS.builder()
-                .codigo(periodo.getId())              
+                .codigo(periodo.getId())
                 .nombre(periodo.getNombre())
                 //.estado(periodo.getEstado())
                 .build();

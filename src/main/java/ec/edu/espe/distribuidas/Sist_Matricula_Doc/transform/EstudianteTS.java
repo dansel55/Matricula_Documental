@@ -26,7 +26,7 @@ public class EstudianteTS {
                 .nombre(estudiante.getNombre())
                 .apellido(estudiante.getApellido())
                 .correo(estudiante.getCorreo())
-                .genero(estudiante.getGenero())                
+                .genero(estudiante.getGenero())
                 .telefono(estudiante.getTelefono())
                 .direccion(estudiante.getDireccion())
                 .carrera(estudiante.getCarrera())

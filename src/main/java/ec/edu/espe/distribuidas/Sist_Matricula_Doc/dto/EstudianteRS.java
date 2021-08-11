@@ -13,17 +13,15 @@ package ec.edu.espe.distribuidas.Sist_Matricula_Doc.dto;
 import lombok.Builder;
 import lombok.Data;
 
-
 /**
  *
  * @author bran-
  */
-
 @Data
 @Builder
 public class EstudianteRS {
 
-    private String tipo;   
+    private String tipo;
     private String identificacion;
     private String nombre;
     private String apellido;
@@ -32,5 +30,5 @@ public class EstudianteRS {
     private String direccion;
     private String telefono;
     private String carrera;
-    
+
 }

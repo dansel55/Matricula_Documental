@@ -10,7 +10,6 @@
  */
 package ec.edu.espe.distribuidas.Sist_Matricula_Doc.model;
 
-import java.math.BigDecimal;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;

@@ -20,13 +20,13 @@ import org.springframework.data.annotation.Id;
  */
 @Data
 public class Asignatura {
-    
+
     @Id
     private String codigo;
     private String nombre;
     private Integer creditos;
-    private List<Prerequisitos> prerequisitos;    
+    private List<Prerequisitos> prerequisitos;
     private List<String> periodos;
     private String departamento;
-    
+
 }

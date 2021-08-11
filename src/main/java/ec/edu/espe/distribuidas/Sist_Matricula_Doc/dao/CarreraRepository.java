@@ -19,13 +19,13 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  *
  * @author Usuario
  */
-public interface CarreraRepository extends MongoRepository<Carrera, Integer>{
-    
+public interface CarreraRepository extends MongoRepository<Carrera, Integer> {
+
     List<Carrera> findByNombreLikeOrderByNombre(String nombre);
 
     List<Carrera> findByVigencia(String vigencia);
-    
+
     List<Carrera> findByModalidad(String modalidad);
-    
+
     Optional<Carrera> findByCodigo(String id);
 }

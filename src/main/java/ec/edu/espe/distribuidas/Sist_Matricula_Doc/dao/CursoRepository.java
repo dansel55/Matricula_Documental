@@ -10,11 +10,7 @@
  */
 package ec.edu.espe.distribuidas.Sist_Matricula_Doc.dao;
 
-import ec.edu.espe.distribuidas.Sist_Matricula_Doc.model.Asignatura;
 import ec.edu.espe.distribuidas.Sist_Matricula_Doc.model.Curso;
-import ec.edu.espe.distribuidas.Sist_Matricula_Doc.model.Horario;
-import ec.edu.espe.distribuidas.Sist_Matricula_Doc.model.Periodo;
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.data.mongodb.repository.MongoRepository;
@@ -23,14 +19,13 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  *
  * @author Usuario
  */
-public interface CursoRepository extends MongoRepository<Curso, Integer>{
-    
+public interface CursoRepository extends MongoRepository<Curso, Integer> {
+
     Optional<Curso> findByNrc(Integer nrc);
 
     List<Curso> findByCupoGreaterThan(Integer cupo);
 
     List<Curso> findByAsignaturaAndPeriodoOrderByNrc(String asignatura, String periodo);
-    
+
     //List<Horario> findByHorariosDiaAndHoraInicioAndHoraFinOrderByDia(String dia, Date horaInicio, Date horaFin);
-    
 }

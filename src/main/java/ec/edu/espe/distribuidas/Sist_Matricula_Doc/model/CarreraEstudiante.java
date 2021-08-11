@@ -10,7 +10,6 @@
  */
 package ec.edu.espe.distribuidas.Sist_Matricula_Doc.model;
 
-import java.math.BigDecimal;
 import lombok.Data;
 
 /**
@@ -19,9 +18,9 @@ import lombok.Data;
  */
 @Data
 public class CarreraEstudiante {
-    
+
     private String nombre;
     private String vigencia;
-    private String modalidad;   
-    
+    private String modalidad;
+
 }

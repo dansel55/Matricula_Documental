@@ -10,7 +10,6 @@
  */
 package ec.edu.espe.distribuidas.Sist_Matricula_Doc.model;
 
-import java.util.List;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
@@ -23,11 +22,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Data
 @Document(collection = "departamentos")
 public class Departamento {
-    
+
     @Id
-    private String id; 
+    private String id;
     @Indexed(name = "idx_departamento_nomdep")
     private String nombre;
     //private List<Carrera> carreras;
-    
+
 }

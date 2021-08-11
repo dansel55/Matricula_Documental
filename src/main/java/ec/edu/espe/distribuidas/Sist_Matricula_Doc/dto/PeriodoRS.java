@@ -20,9 +20,9 @@ import lombok.Data;
 @Data
 @Builder
 public class PeriodoRS {
- 
-    private String codigo;  
-    private String nombre; 
+
+    private String codigo;
+    private String nombre;
     private String estado;
-    
+
 }

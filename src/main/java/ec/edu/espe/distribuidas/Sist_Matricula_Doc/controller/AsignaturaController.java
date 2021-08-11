@@ -48,10 +48,10 @@ public class AsignaturaController {
         @ApiResponse(code = 200, message = "Ok - Se encontraron los registros"),
         @ApiResponse(code = 404, message = "Not Found - No se encontro una entidad"),
         @ApiResponse(code = 500, message = "Internal Server Error - Problemas al realizar la busqueda")})*/
-    public ResponseEntity obtenerAsignaturas(@PathVariable String codigoDepartamento, 
+    public ResponseEntity obtenerAsignaturas(@PathVariable String codigoDepartamento,
             @PathVariable String codigoPeriodo) {
         try {
-            List<Asignatura> asignaturas = this.asignaturaService.obtenerAsignaturas(codigoDepartamento, 
+            List<Asignatura> asignaturas = this.asignaturaService.obtenerAsignaturas(codigoDepartamento,
                     codigoPeriodo);
             List<AsignaturaRS> asignaturasRS = new ArrayList<>();
             for (Asignatura asig : asignaturas) {

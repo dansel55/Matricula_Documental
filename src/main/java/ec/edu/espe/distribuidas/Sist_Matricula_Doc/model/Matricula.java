@@ -24,7 +24,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Data
 @Document(collection = "matriculas")
 public class Matricula {
-    
+
     @Id
     private String codigo;
     private Periodo periodo;

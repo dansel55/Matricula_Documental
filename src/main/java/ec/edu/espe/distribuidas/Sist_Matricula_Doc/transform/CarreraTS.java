@@ -10,8 +10,8 @@
  */
 package ec.edu.espe.distribuidas.Sist_Matricula_Doc.transform;
 
-import ec.edu.espe.distribuidas.Sist_Matricula_Doc.dto.CarreraRS;
-import ec.edu.espe.distribuidas.Sist_Matricula_Doc.model.Carrera;
+import ec.edu.espe.distribuidas.Sist_Matricula_Doc.dto.*;
+import ec.edu.espe.distribuidas.Sist_Matricula_Doc.model.*;
 import lombok.Data;
 
 /**

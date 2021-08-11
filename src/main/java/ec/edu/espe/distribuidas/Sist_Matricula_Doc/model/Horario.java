@@ -23,5 +23,5 @@ public class Horario {
     private String dia;
     private Date horaInicio;
     private Date horaFin;
-    
+
 }

@@ -18,10 +18,10 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  *
  * @author Usuario
  */
-public interface DepartamentoRepository extends MongoRepository<Departamento, Integer>{
-    
+public interface DepartamentoRepository extends MongoRepository<Departamento, Integer> {
+
     Departamento findByNombreLike(String nombre);
-    
+
     Optional<Departamento> findById(String codigo);
-    
+
 }

@@ -39,7 +39,7 @@ public class AsignaturaService {
         this.periodoRepository = periodoRepository;
         this.departamentoRepository = departamentoRepository;
         this.asignaturaRepository = asignaturaRepository;
-    }    
+    }
 
     public List<Asignatura> obtenerAsignaturas(String codigoDepartamento, String codigoPeriodo) {
         Optional<Periodo> periodo
@@ -55,8 +55,8 @@ public class AsignaturaService {
         List<Asignatura> asignaturas = new ArrayList<>();
         List<Asignatura> asignaturaPeriodo = this.asignaturaRepository.findByDepartamento(departamento.get().getNombre());
         for (Asignatura asig : asignaturaPeriodo) {
-            for(String per : asig.getPeriodos()){
-                if(per.equals(periodo.get().getNombre())){
+            for (String per : asig.getPeriodos()) {
+                if (per.equals(periodo.get().getNombre())) {
                     asignaturas.add(asig);
                 }
             }

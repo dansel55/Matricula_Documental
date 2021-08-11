@@ -23,9 +23,9 @@ import lombok.Data;
 public class MatriculaRS {
 
     private String codigo;
-    private Date fecha;   
-    private String periodo;   
+    private Date fecha;
+    private String periodo;
     private BigDecimal creditosTotales;
     private List<MatriculaDetalleRS> detalle;
-    
+
 }

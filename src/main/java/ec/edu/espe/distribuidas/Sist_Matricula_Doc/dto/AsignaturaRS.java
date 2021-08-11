@@ -19,9 +19,9 @@ import lombok.Data;
  */
 @Data
 @Builder
-public class AsignaturaRS {    
+public class AsignaturaRS {
 
     private String codigo;
     private String nombre;
-    
+
 }

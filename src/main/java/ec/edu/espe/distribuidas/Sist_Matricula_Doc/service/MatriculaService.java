@@ -32,15 +32,15 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @Slf4j
 public class MatriculaService {
-    private final MatriculaRepository matriculaRepository;
+    /*private final MatriculaRepository matriculaRepository;
     private final EstudianteRepository estudianteRepository;
     private final CursoRepository cursoRepository;
-    private final PeriodoRepository periodoRepository;
+    private final PeriodoRepository periodoRepository;*/
     //private final DetalleMatriculaRepository detalleMatriculaRepository;
 
-    public MatriculaService(MatriculaRepository matriculaRepository, EstudianteRepository estudianteRepository,
-            CursoRepository cursoRepository, PeriodoRepository periodoRepository/*,
-            DetalleMatriculaRepository detalleMatriculaRepository*/) {
+   /* public MatriculaService(MatriculaRepository matriculaRepository, EstudianteRepository estudianteRepository,
+            CursoRepository cursoRepository, PeriodoRepository periodoRepository,
+            DetalleMatriculaRepository detalleMatriculaRepository) {
         this.matriculaRepository = matriculaRepository;
         this.estudianteRepository = estudianteRepository;
         this.cursoRepository = cursoRepository;
@@ -48,7 +48,6 @@ public class MatriculaService {
         //this.detalleMatriculaRepository = detalleMatriculaRepository;
     }
 
-    @Transactional
     public List<String> matricularse(MatriculaRQ matriculaRQ) {
         Matricula matricula;
         if (matriculaRQ.) {
@@ -262,6 +261,6 @@ public class MatriculaService {
         Estudiante estudiante = estudianteOpt.get();
 
         return estudiante.getMatricula();
-    }
+    }*/
     
 }

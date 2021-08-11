@@ -18,8 +18,8 @@ import lombok.Data;
  */
 @Data
 public class Prerequisitos {
-    
+
     private String prerequisito;
     private String estado;
-    
+
 }

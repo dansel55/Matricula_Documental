@@ -20,11 +20,11 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  *
  * @author Usuario
  */
-public interface PeriodoRepository extends MongoRepository<Periodo, Integer>{
-    
+public interface PeriodoRepository extends MongoRepository<Periodo, Integer> {
+
     List<Periodo> findByInicioOrderByInicioDesc(Date inicio);
 
-    Periodo findByNombreLike(String nombre);    
-    
+    Periodo findByNombreLike(String nombre);
+
     Optional<Periodo> findById(String codigo);
 }

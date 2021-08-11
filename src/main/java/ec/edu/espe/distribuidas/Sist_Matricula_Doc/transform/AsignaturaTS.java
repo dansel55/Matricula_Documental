@@ -13,7 +13,6 @@ package ec.edu.espe.distribuidas.Sist_Matricula_Doc.transform;
 import ec.edu.espe.distribuidas.Sist_Matricula_Doc.dto.AsignaturaRS;
 import ec.edu.espe.distribuidas.Sist_Matricula_Doc.model.Asignatura;
 
-
 /**
  *
  * @author bran-

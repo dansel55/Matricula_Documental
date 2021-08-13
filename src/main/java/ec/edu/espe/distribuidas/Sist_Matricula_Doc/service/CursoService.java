@@ -45,10 +45,8 @@ public class CursoService {
         this.periodoRepository = periodoRepository;
     }
 
-
-    public List<CursoRS> obtenerCursos(String codigoAsignatura, String codigoPeriodo) throws ParseException {
+    public List<CursoRS> obtenerCursos(String codigoAsignatura, String codigoPeriodo) {
         Optional<Asignatura> asignatura = this.asignaturaRepository.findByCodigo(codigoAsignatura);
-
 
         if (asignatura.isEmpty()) {
             throw new EntityNotFoundException("No se encontro la asignatura");
@@ -66,7 +64,7 @@ public class CursoService {
         return cursosRS;
     }
 
-    public CursoRS buscarPorNrc(Integer nrc) throws ParseException {
+    public CursoRS buscarPorNrc(Integer nrc) {
         Optional<Curso> curso = this.cursoRepository.findByNrc(nrc);
         if (curso.isEmpty()) {
             throw new EntityNotFoundException("No se encontro el nrc: " + nrc);

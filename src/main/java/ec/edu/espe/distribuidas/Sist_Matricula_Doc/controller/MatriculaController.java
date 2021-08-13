@@ -66,10 +66,10 @@ public class MatriculaController {
             return ResponseEntity.notFound().build();
         } catch (MatriculaConflictException e) {
             return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getErrores());
-        } /*catch (Exception e) {
+        } catch (Exception e) {
             log.error(e.getMessage());
             return ResponseEntity.internalServerError().build();
-        }*/
+        }
     }
 
     @ApiOperation(value = "Buscar una matricula",

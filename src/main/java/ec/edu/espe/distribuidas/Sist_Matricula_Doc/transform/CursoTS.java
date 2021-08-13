@@ -28,7 +28,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class CursoTS {
 
-    public static CursoRS cursoRS(Curso curso) throws ParseException {
+    public static CursoRS cursoRS(Curso curso) {
         return CursoRS.builder()
                 .codigo(curso.getCodigo())
                 .nrc(curso.getNrc())
@@ -51,7 +51,7 @@ public class CursoTS {
         }
         return carreras;
     }*/
-    public static List<HorarioRS> horarios(List<Horario> h) throws ParseException {
+    public static List<HorarioRS> horarios(List<Horario> h) {
         List<HorarioRS> horarioRS = new ArrayList<>();
         if (h.isEmpty()) {
             return null;
@@ -59,10 +59,11 @@ public class CursoTS {
         for (Horario hor : h) {
             HorarioRS hrs = new HorarioRS();
             hrs.setDia(hor.getDia());
-            Date inicio = new SimpleDateFormat("HH:mm:ss").parse(hor.getHoraInicio().toString());
-            hrs.setHoraInicio(inicio);
-            Date fin = new SimpleDateFormat("HH:mm:ss").parse(hor.getHoraFin().toString());
-            hrs.setHoraFin(fin);
+            log.info("HoraInicio:{}", hor.getHoraInicio().toString());
+            String inicio[] = hor.getHoraInicio().toString().split(" ");
+            hrs.setHoraInicio(inicio[3]);
+            String fin[] = hor.getHoraFin().toString().split(" ");
+            hrs.setHoraFin(fin[3]);
             horarioRS.add(hrs);
         }
         return horarioRS;

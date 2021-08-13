@@ -19,6 +19,7 @@ import ec.edu.espe.distribuidas.Sist_Matricula_Doc.model.Asignatura;
 import ec.edu.espe.distribuidas.Sist_Matricula_Doc.model.Curso;
 import ec.edu.espe.distribuidas.Sist_Matricula_Doc.model.Periodo;
 import ec.edu.espe.distribuidas.Sist_Matricula_Doc.transform.CursoTS;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -44,7 +45,7 @@ public class CursoService {
         this.periodoRepository = periodoRepository;
     }
 
-    public List<CursoRS> obtenerCursos(Integer codigoAsignatura, Integer codigoPeriodo) {
+    public List<CursoRS> obtenerCursos(Integer codigoAsignatura, Integer codigoPeriodo) throws ParseException {
         Optional<Asignatura> asignatura = this.asignaturaRepository.findById(codigoAsignatura);
 
         if (asignatura.isEmpty()) {
@@ -62,7 +63,7 @@ public class CursoService {
         return cursosRS;
     }
 
-    public CursoRS buscarPorNrc(Integer nrc) {
+    public CursoRS buscarPorNrc(Integer nrc) throws ParseException {
         Optional<Curso> curso = this.cursoRepository.findByNrc(nrc);
         if (curso.isEmpty()) {
             throw new EntityNotFoundException("No se encontro el nrc: " + nrc);

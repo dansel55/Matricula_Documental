@@ -14,7 +14,10 @@ import ec.edu.espe.distribuidas.Sist_Matricula_Doc.dto.CursoRS;
 import ec.edu.espe.distribuidas.Sist_Matricula_Doc.dto.HorarioRS;
 import ec.edu.espe.distribuidas.Sist_Matricula_Doc.model.Curso;
 import ec.edu.espe.distribuidas.Sist_Matricula_Doc.model.Horario;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 
@@ -25,7 +28,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class CursoTS {
 
-    public static CursoRS cursoRS(Curso curso) {
+    public static CursoRS cursoRS(Curso curso) throws ParseException {
         return CursoRS.builder()
                 .codigo(curso.getCodigo())
                 .nrc(curso.getNrc())
@@ -48,7 +51,7 @@ public class CursoTS {
         }
         return carreras;
     }*/
-    public static List<HorarioRS> horarios(List<Horario> h) {
+    public static List<HorarioRS> horarios(List<Horario> h) throws ParseException {
         List<HorarioRS> horarioRS = new ArrayList<>();
         if (h.isEmpty()) {
             return null;
@@ -56,8 +59,10 @@ public class CursoTS {
         for (Horario hor : h) {
             HorarioRS hrs = new HorarioRS();
             hrs.setDia(hor.getDia());
-            hrs.setHoraInicio(hor.getHoraInicio());
-            hrs.setHoraFin(hor.getHoraFin());
+            Date inicio = new SimpleDateFormat("HH:mm:ss").parse(hor.getHoraInicio().toString());
+            hrs.setHoraInicio(inicio);
+            Date fin = new SimpleDateFormat("HH:mm:ss").parse(hor.getHoraFin().toString());
+            hrs.setHoraFin(fin);
             horarioRS.add(hrs);
         }
         return horarioRS;

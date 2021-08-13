@@ -20,7 +20,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  * @author Usuario
  */
 public interface CursoRepository extends MongoRepository<Curso, String> {
-
+    
     Optional<Curso> findByNrc(Integer nrc);
     
     Optional<Curso> findByCodigo(String codigo);

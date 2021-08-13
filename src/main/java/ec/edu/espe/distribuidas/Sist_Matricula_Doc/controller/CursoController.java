@@ -13,6 +13,9 @@ package ec.edu.espe.distribuidas.Sist_Matricula_Doc.controller;
 import ec.edu.espe.distribuidas.Sist_Matricula_Doc.dto.CursoRS;
 import ec.edu.espe.distribuidas.Sist_Matricula_Doc.exception.EntityNotFoundException;
 import ec.edu.espe.distribuidas.Sist_Matricula_Doc.service.CursoService;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import java.util.List;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -38,13 +41,13 @@ public class CursoController {
     }
 
     @GetMapping(value = "{codigoAsignatura}/{codigoPeriodo}")
-    /*@ApiOperation(value = "Busca los cursos donde se dictan las asignaturas",
+    @ApiOperation(value = "Busca los cursos donde se dictan las asignaturas",
             notes = "Devuelve todos los cursos donde se dictan clases para cada una de las asignaturas")
     @ApiResponses(value = {
         @ApiResponse(code = 200, message = "Ok - Se encontraron los registros"),
         @ApiResponse(code = 404, message = "Not Found - No se encontro una entidad"),
-        @ApiResponse(code = 500, message = "Internal Server Error - Problemas al realizar la busqueda")})*/
-    public ResponseEntity obneterCursos(@PathVariable Integer codigoAsignatura, @PathVariable Integer codigoPeriodo) {
+        @ApiResponse(code = 500, message = "Internal Server Error - Problemas al realizar la busqueda")})
+    public ResponseEntity obneterCursos(@PathVariable String codigoAsignatura, @PathVariable String codigoPeriodo) {
         try {
             List<CursoRS> cursos = this.cursoService.obtenerCursos(codigoAsignatura, codigoPeriodo);
             return ResponseEntity.ok(cursos);

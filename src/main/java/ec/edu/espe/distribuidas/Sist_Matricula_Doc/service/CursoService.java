@@ -45,8 +45,10 @@ public class CursoService {
         this.periodoRepository = periodoRepository;
     }
 
-    public List<CursoRS> obtenerCursos(Integer codigoAsignatura, Integer codigoPeriodo) throws ParseException {
-        Optional<Asignatura> asignatura = this.asignaturaRepository.findById(codigoAsignatura);
+
+    public List<CursoRS> obtenerCursos(String codigoAsignatura, String codigoPeriodo) throws ParseException {
+        Optional<Asignatura> asignatura = this.asignaturaRepository.findByCodigo(codigoAsignatura);
+
 
         if (asignatura.isEmpty()) {
             throw new EntityNotFoundException("No se encontro la asignatura");
@@ -56,7 +58,8 @@ public class CursoService {
             throw new EntityNotFoundException("No se encontro el periodo");
         }
         List<CursoRS> cursosRS = new ArrayList<>();
-        List<Curso> curso = this.cursoRepository.findByAsignaturaAndPeriodoOrderByNrc(asignatura.get().getNombre(), periodo.get().getNombre());
+        List<Curso> curso = this.cursoRepository.findByAsignaturaAndPeriodoOrderByNrc(asignatura.get().getNombre(),
+                periodo.get().getNombre());
         for (Curso c : curso) {
             cursosRS.add(CursoTS.cursoRS(c));
         }

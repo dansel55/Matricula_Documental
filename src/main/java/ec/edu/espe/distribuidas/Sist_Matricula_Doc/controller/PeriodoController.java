@@ -10,6 +10,13 @@
  */
 package ec.edu.espe.distribuidas.Sist_Matricula_Doc.controller;
 
+import ec.edu.espe.distribuidas.Sist_Matricula_Doc.dto.*;
+import ec.edu.espe.distribuidas.Sist_Matricula_Doc.model.*;
+import ec.edu.espe.distribuidas.Sist_Matricula_Doc.service.*;
+import ec.edu.espe.distribuidas.Sist_Matricula_Doc.transform.*;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.http.ResponseEntity;
@@ -17,10 +24,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ec.edu.espe.distribuidas.Sist_Matricula_Doc.service.*;
-import ec.edu.espe.distribuidas.Sist_Matricula_Doc.model.*;
-import ec.edu.espe.distribuidas.Sist_Matricula_Doc.dto.*;
-import ec.edu.espe.distribuidas.Sist_Matricula_Doc.transform.*;
 
 /**
  *
@@ -38,12 +41,12 @@ public class PeriodoController {
     }
 
     @GetMapping
-    /*@ApiOperation(value = "Busca un listado de periodos academicos",
+    @ApiOperation(value = "Busca un listado de periodos academicos",
             notes = "Devuelve una lista de peridos academicos")
     @ApiResponses(value = {
         @ApiResponse(code = 200, message = "Ok - Se encontraron los registros"),
         @ApiResponse(code = 404, message = "Not Found - No se encontro una entidad"),
-        @ApiResponse(code = 500, message = "Internal Server Error - Problemas al realizar la busqueda")})*/
+        @ApiResponse(code = 500, message = "Internal Server Error - Problemas al realizar la busqueda")})
     public ResponseEntity obtenerPeriodos() {
         try {
             List<Periodo> periodos = this.periodoService.obtenerTodosPeriodos();

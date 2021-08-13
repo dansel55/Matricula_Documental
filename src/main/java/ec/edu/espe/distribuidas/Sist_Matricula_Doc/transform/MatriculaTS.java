@@ -28,11 +28,10 @@ public class MatriculaTS {
         matriculaRS.setCodigo(matricula.getCodigo());
         matriculaRS.setFecha(matricula.getFecha());
         matriculaRS.setCreditosTotales(matricula.getCreditosTotales());
-        matriculaRS.setPeriodo(matricula.getPeriodo().getNombre());
+        matriculaRS.setPeriodo(matricula.getPeriodo());
         List<MatriculaDetalleRS> matriculaDetalles = new ArrayList<>();
         for (DetalleMatricula detalleMatricula : matricula.getDetalles()) {
             MatriculaDetalleRS matriculaDetalleRS = MatriculaDetalleRS.builder()
-                    .codigo(detalleMatricula.getCodigo())
                     .nrc(detalleMatricula.getNrc())
                     .materia(detalleMatricula.getMateria())
                     .creditos(detalleMatricula.getCreditos())

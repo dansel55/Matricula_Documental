@@ -10,14 +10,14 @@
  */
 package ec.edu.espe.distribuidas.Sist_Matricula_Doc.controller;
 
+import ec.edu.espe.distribuidas.Sist_Matricula_Doc.model.*;
+import ec.edu.espe.distribuidas.Sist_Matricula_Doc.service.*;
 import java.util.List;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ec.edu.espe.distribuidas.Sist_Matricula_Doc.service.*;
-import ec.edu.espe.distribuidas.Sist_Matricula_Doc.model.*;
 
 /**
  *

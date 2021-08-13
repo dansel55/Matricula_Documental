@@ -17,6 +17,9 @@ import ec.edu.espe.distribuidas.Sist_Matricula_Doc.exception.EntityNotFoundExcep
 import ec.edu.espe.distribuidas.Sist_Matricula_Doc.model.Estudiante;
 import ec.edu.espe.distribuidas.Sist_Matricula_Doc.service.EstudianteService;
 import ec.edu.espe.distribuidas.Sist_Matricula_Doc.transform.EstudianteTS;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -46,11 +49,11 @@ public class EstudianteController {
     }
 
     @GetMapping(value = "{correo}")
-    /*@ApiOperation(value = "Busca un estudiante por correo",
+    @ApiOperation(value = "Busca un estudiante por correo",
             notes = "Devuelve el correo registrado por el estudiante")
     @ApiResponses(value = {
         @ApiResponse(code = 200, message = "Ok - Se encontraron los registros"),
-        @ApiResponse(code = 404, message = "Not Found - No se encontro una entidad")})*/
+        @ApiResponse(code = 404, message = "Not Found - No se encontro una entidad")})
     public ResponseEntity obtenerDatosEstudiante(@PathVariable String correo) {
         try {
             Estudiante estudiante = this.estudianteService.obtenerEstudanterPorCorreo(correo);
@@ -67,12 +70,12 @@ public class EstudianteController {
     }
 
     @PostMapping
-    /*@ApiOperation(value = "Realiza el registro de un nuevo estudiante",
+    @ApiOperation(value = "Realiza el registro de un nuevo estudiante",
             notes = "Realiza la creacion de un nuevo estudiante para una determinada carrera")
     @ApiResponses(value = {
         @ApiResponse(code = 200, message = "Ok - Se ha creado correctamente"),
         @ApiResponse(code = 404, message = "Not Create - No se puede crear el registro"),
-        @ApiResponse(code = 500, message = "Internal Server Error - Problemas al realizar la operacion")})*/
+        @ApiResponse(code = 500, message = "Internal Server Error - Problemas al realizar la operacion")})
     public ResponseEntity crearEstudiante(@RequestBody EstudianteRQ estudianteRQ) {
         try {
             this.estudianteService.agregarEstudiante(estudianteRQ);
@@ -86,12 +89,12 @@ public class EstudianteController {
     }
 
     @PutMapping("/{usuario}")
-    /*@ApiOperation(value = "Modifica el registro de un estudiante",
+    @ApiOperation(value = "Modifica el registro de un estudiante",
             notes = "Realiza la modificacion de los registros de un estudiante")
     @ApiResponses(value = {
         @ApiResponse(code = 200, message = "Ok - Se ha modificado correctamente"),
         @ApiResponse(code = 404, message = "Not Modify - No se puede modificar"),
-        @ApiResponse(code = 500, message = "Internal Server Error - Problemas al realizar la operacion")})*/
+        @ApiResponse(code = 500, message = "Internal Server Error - Problemas al realizar la operacion")})
     public ResponseEntity<Estudiante> editarEstudiante(@PathVariable String usuario,
             @RequestBody EstudianteEditarRS estudianteEditarRs) {
         try {

@@ -35,5 +35,7 @@ public interface AsignaturaRepository extends MongoRepository<Asignatura, Intege
     Optional<Asignatura> findByNombre(String nombre);
 
     List<Asignatura> findByDepartamento(String departamento);
+    
+    Optional<Asignatura> findByCodigo(String codigo);
 
 }

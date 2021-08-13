@@ -22,7 +22,6 @@ import lombok.Data;
 @Builder
 public class MatriculaDetalleRS {
 
-    private String codigo;
     private Integer nrc;
     private String materia;
     private BigDecimal creditos;

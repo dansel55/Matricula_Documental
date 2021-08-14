@@ -143,7 +143,8 @@ public class MatriculaService {
 
             for (Matricula matric : materiasEstudiante) {
                 for (DetalleMatricula detMatricula : matric.getDetalles()) {
-                    if (detMatricula.getNrc() == curso.getNrc()) {
+                    if (detMatricula.getMateria().equals(curso.getAsignatura())
+                            && "APR".equals(detMatricula.getEstado())) {
                         materiaPasada = true;
                         break;
                     }
@@ -160,7 +161,7 @@ public class MatriculaService {
             for (String pre : asignatura.get().getPrerequisitos()) {
                 for (Matricula matric : materiasEstudiante) {
                     for (DetalleMatricula detMatricula : matric.getDetalles()) {
-                        if (pre.equals(detMatricula.getMateria())) {
+                        if (pre.equals(detMatricula.getMateria()) && "APR".equals(detMatricula.getEstado())) {
                             numeroPre++;
                             break;
                         }
